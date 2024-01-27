@@ -1,10 +1,20 @@
 import Navbar from "@/components/Navigation/Navbar";
-import Image from "next/image";
+import Filter from "@/components/Search/Filter";
+import Search from "@/components/Search/Search";
+import React from "react";
 
-export default function Home() {
+function Countries(props) {
   return (
-    <div>
-        <Navbar />
+    <div className="container">
+      <div className="main">
+        <div>
+          <Search />
+          <Filter />
+        </div>
+        
+      </div>
     </div>
   );
 }
+
+export default Countries;

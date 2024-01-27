@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 function Country(props) {
-    return (
-        <div>
-        
-        </div>
-    );
+  return (
+    <div className="container">
+      <div className="main"></div>
+    </div>
+  );
 }
 
 export default Country;

@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.container {
+  @apply bg-gray-900;
+}
+
+.main {
+  @apply w-[85%] mx-auto;
+}
