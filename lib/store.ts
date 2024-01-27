@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { apiCountries } from "./features/countries/countriesSlice";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      [apiCountries.reducerPath]: apiCountries.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat([apiCountries.middleware]),
   });
 };
 
