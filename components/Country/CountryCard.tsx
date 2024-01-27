@@ -15,7 +15,7 @@ function CountryCard(props: any) {
         placeholder={<Image src={flags.png} alt="loading" preview={false} />}
       />
       <div className="p-3">
-        <Link href={`/countries/${code}`} className="hover:text-blue">
+        <Link href={`/country/${code}`} className="hover:text-blue">
           <Title level={3}>{name}</Title>
         </Link>
         <Paragraph>

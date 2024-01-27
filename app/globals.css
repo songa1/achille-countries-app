@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-  @apply bg-gray-900;
+  @apply bg-gray-900 w-full;
 }
 
 .main {
