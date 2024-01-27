@@ -2,7 +2,7 @@
 
 import Loading from "@/app/loading";
 import OneCountry from "@/components/Country/OneCountry";
-import { useGetOneCountryQuery } from "@/lib/features/country/countrySlice";
+import { useGetOneCountryQuery } from "@/lib/features/countries/countriesSlice";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Button, Spin } from "antd";
 import { useParams, useRouter } from "next/navigation";

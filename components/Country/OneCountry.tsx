@@ -16,7 +16,7 @@ function OneCountry(props: any) {
     : "No data";
   const coordinates = latlang ? latlang.join() : "No data";
   return (
-    <div className="flex justify-start items-center gap-4">
+    <div className="flex justify-start items-start gap-10">
       <div className="flex-1">
         <Image src={flags?.svg} alt={flags?.alt} />
       </div>

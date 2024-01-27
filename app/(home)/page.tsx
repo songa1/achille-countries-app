@@ -12,10 +12,19 @@ function Countries() {
   const { data } = useGetCountriesQuery("");
   const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchedData, setSearchedData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+  let dataToUse =
+    searchedData.length !== 0
+      ? searchedData
+      : filteredData.length !== 0
+      ? filteredData
+      : data;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCountries = data?.slice(indexOfFirstItem, indexOfLastItem);
+  const currentCountries = dataToUse?.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -27,8 +36,8 @@ function Countries() {
       <div className="container">
         <div className="main">
           <div className="pt-10 pb-5 flex justify-between items-center">
-            <Search />
-            <Filter />
+            <Search setSearchedData={setSearchedData} />
+            <Filter setFilteredData={setFilteredData} />
           </div>
           <Row gutter={[16, 16]} className="py-5">
             {data &&

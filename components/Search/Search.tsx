@@ -1,13 +1,35 @@
+import Loading from "@/app/loading";
+import { useGetCountriesBySearchingNameQuery } from "@/lib/features/countries/countriesSlice";
 import { SearchOutlined } from "@ant-design/icons";
-import { Input, Space } from "antd";
-import React from "react";
+import { Input } from "antd";
+import React, { useState } from "react";
 
-function Search(props) {
+function Search(props: any) {
+  const { setSearchedData } = props;
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const { data, status, isLoading } =
+    useGetCountriesBySearchingNameQuery(searchTerm);
+  console.log(status);
+  if (data) {
+    setSearchedData(data);
+  }
+
+  const handleSearch = (e: any) => {
+    setSearchTerm(e.target.value);
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div>
-      <Space.Compact size="large">
-        <Input addonBefore={<SearchOutlined />} placeholder="Search countries..." />
-      </Space.Compact>
+      <Input
+        allowClear
+        addonBefore={<SearchOutlined />}
+        onChange={handleSearch}
+        placeholder="Search countries..."
+      />
     </div>
   );
 }
