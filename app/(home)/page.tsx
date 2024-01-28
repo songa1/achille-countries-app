@@ -4,7 +4,7 @@ import CountryCard from "@/components/Country/CountryCard";
 import Filter from "@/components/Search/Filter";
 import Search from "@/components/Search/Search";
 import { useGetCountriesQuery } from "@/lib/features/countries/countriesSlice";
-import { Col, Pagination, Row, Spin } from "antd";
+import { Col, Flex, Pagination, Row, Spin } from "antd";
 import React, { useState } from "react";
 import Loading from "../loading";
 
@@ -39,11 +39,17 @@ function Countries() {
             <Search setSearchedData={setSearchedData} />
             <Filter setFilteredData={setFilteredData} />
           </div>
-          <Row gutter={[16, 16]} className="py-5">
+          <Flex
+            wrap="wrap"
+            gap="small"
+            justify="space-between"
+            align="start"
+            className="py-5"
+          >
             {data &&
               currentCountries?.map((country: any, index: number) => {
                 return (
-                  <Col span={6} key={index}>
+                  <Col key={index}>
                     <CountryCard
                       capital={country?.capital}
                       name={country?.name?.common}
@@ -55,7 +61,7 @@ function Countries() {
                   </Col>
                 );
               })}
-          </Row>
+          </Flex>
           <div className="flex items-center justify-center py-5">
             <Pagination
               defaultCurrent={1}
@@ -63,6 +69,7 @@ function Countries() {
               pageSize={itemsPerPage}
               onChange={handlePageChange}
               total={data?.length}
+              className="dark:text-white"
             />
           </div>
         </div>

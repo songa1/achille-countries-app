@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  word-wrap: break-word !important;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,7 +29,7 @@ body {
 }
 
 .container {
-  @apply h-screen bg-gray-50 text-gray-900 dark:text-gray-50 dark:bg-gray-900 w-full;
+  @apply h-full bg-gray-50 text-gray-900 dark:text-gray-50 dark:bg-gray-900 w-full;
 }
 
 .main {
