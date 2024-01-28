@@ -26,6 +26,7 @@ function Search(props: any) {
     <div>
       <Input
         allowClear
+        className="dark:bg-white dark:rounded"
         addonBefore={<SearchOutlined />}
         onChange={handleSearch}
         placeholder="Search countries..."
