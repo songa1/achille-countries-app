@@ -22,12 +22,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 .container {
   @apply h-full bg-gray-50 text-gray-900 dark:text-gray-50 dark:bg-gray-900 w-full;
 }
