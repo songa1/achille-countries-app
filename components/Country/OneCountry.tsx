@@ -16,15 +16,15 @@ function OneCountry(props: any) {
     : "No data";
   const coordinates = latlang ? latlang.join() : "No data";
   return (
-    <div className="flex justify-start items-start gap-10">
-      <div className="flex-1">
+    <div className="flex justify-start items-start gap-10 flex-wrap sm:flex-col xs:flex-col md:flex-row">
+      <div className="md:flex-1 w-full">
         <Image src={flags?.svg} alt={flags?.alt} />
       </div>
-      <div className="flex-1">
+      <div className="md:flex-1 w-full">
         <Title level={1} className="dark:text-white">
           {name}
         </Title>
-        <Flex justify="space-between" align="center">
+        <Flex justify="space-between" align="center" wrap="wrap">
           <Col>
             <Paragraph className="dark:text-white">
               <b>Capital City: </b>
