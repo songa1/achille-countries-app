@@ -7,7 +7,7 @@ const { Paragraph, Title } = Typography;
 function CountryCard(props: any) {
   const { flags, name, population, region, capital, code } = props;
   return (
-    <div className="bg-white shadow-md rounded-md">
+    <div className="bg-white dark:bg-gray-700 shadow-md rounded-md">
       <Image
         src={flags.png}
         alt={flags.alt}
@@ -16,17 +16,19 @@ function CountryCard(props: any) {
       />
       <div className="p-3">
         <Link href={`/country/${code}`} className="hover:text-blue">
-          <Title level={3}>{name}</Title>
+          <Title level={3} className="dark:text-gray-50">
+            {name}
+          </Title>
         </Link>
-        <Paragraph>
+        <Paragraph className="dark:text-gray-50">
           <b>Population: </b>
           {population}
         </Paragraph>
-        <Paragraph>
+        <Paragraph className="dark:text-gray-50">
           <b>Region: </b>
           {region}
         </Paragraph>
-        <Paragraph>
+        <Paragraph className="dark:text-gray-50">
           <b>Capital: </b>
           {capital}
         </Paragraph>

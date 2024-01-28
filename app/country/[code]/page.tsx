@@ -31,7 +31,7 @@ function Country() {
               languages={country?.languages}
               currencies={country?.currencies}
               domain={country?.tld}
-              capital={country?.capital[0]}
+              city={country?.capital}
               area={country?.area}
               latlang={country?.latlng}
             />

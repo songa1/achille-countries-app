@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiCountries = createApi({
   reducerPath: "apiCountries",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://restcountries.com/v3.1/",
+    baseUrl: process.env.NEXT_PUBLIC_API_URL,
   }),
   endpoints: (builder) => ({
     getCountries: builder.query({
@@ -25,5 +25,5 @@ export const {
   useGetCountriesQuery,
   useGetOneCountryQuery,
   useGetCountriesByRegionQuery,
-  useGetCountriesBySearchingNameQuery
+  useGetCountriesBySearchingNameQuery,
 } = apiCountries;

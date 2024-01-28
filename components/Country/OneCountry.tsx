@@ -21,32 +21,34 @@ function OneCountry(props: any) {
         <Image src={flags?.svg} alt={flags?.alt} />
       </div>
       <div className="flex-1">
-        <Title level={1}>{name}</Title>
+        <Title level={1} className="dark:text-white">
+          {name}
+        </Title>
         <Flex justify="space-between" align="center">
           <Col>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Capital City: </b>
               {city}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Coordinates: </b>
               {coordinates}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Area: </b>
               {area}
             </Paragraph>
           </Col>
           <Col>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Top Level Domain: </b>
               {domain}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Currencies: </b>
               {currencyNames}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="dark:text-white">
               <b>Languages: </b>
               {languageNames}
             </Paragraph>
